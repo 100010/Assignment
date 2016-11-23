@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def approve_skill
-    unless limit_skill_approve_count!(params[:id], params[:skill_id])
+    unless limit_skill_approve_count!(current_user.id, params[:skill_id])
       approved_skill = ActsAsTaggableOn::Tag.find params[:skill_id]
       approved_skill.approve_count += 1
       approved_skill.approved_user_id.push(current_user.id)
@@ -89,7 +89,7 @@ class UsersController < ApplicationController
 
   # 2回以上スキルをプラスしようとした時のためのフィルター
   private def limit_skill_approve_count!(user_id, skill_id)
-    if ActsAsTaggableOn::Tag.find(params[:skill_id]).approved_user_id.include?(user_id)
+    if ActsAsTaggableOn::Tag.find(params[:skill_id]).approved_user_id.include?(user_id.to_s)
       redirect_to :back, flash: { danger: "人のスキルは1回までしかプラスできません" }
     else
       return nil
