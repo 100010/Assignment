@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     member do
       get :add_skill
       post :approve_skill
+      post :disapprove_skill
     end
   end
   get    'signup'  => 'users#new'

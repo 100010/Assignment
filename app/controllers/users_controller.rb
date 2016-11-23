@@ -8,9 +8,6 @@ class UsersController < ApplicationController
   def add_skill
   end
 
-  def people
-  end
-
   def approve_skill
     unless limit_skill_approve_count!(current_user.id, params[:skill_id])
       approved_skill = ActsAsTaggableOn::Tag.find params[:skill_id]
@@ -20,6 +17,16 @@ class UsersController < ApplicationController
       approved_skill.save
       redirect_to :back
     end
+  end
+
+  def disapprove_skill
+    skill = ActsAsTaggableOn::Tag.find params[:skill_id]
+    skill.approve_count -= 1
+    skill.approved_user_id.delete(current_user.id.to_s)
+    skill.approved_user_id.delete(current_user.id.to_s)
+    skill.approved_user_image.delete(params[:image_url])
+    skill.save
+    redirect_to :back, flash: { success: '完了しました' }
   end
 
   def skills
@@ -41,7 +48,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       remember @user
-      redirect_to user_path @user, flash: {success: 'アカウント登録が完了しました'}
+      redirect_to user_path @user, flash: { success: 'アカウント登録が完了しました' }
     else
       render :new
     end
