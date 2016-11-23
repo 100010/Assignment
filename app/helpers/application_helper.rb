@@ -56,6 +56,22 @@ module ActionView
         end
       end
 
+      def flash_success_messages!(flash)
+        if flash
+          html = <<-HTML
+            <div class="alert alert-success">
+              <ul>
+                <li>
+                  #{flash}
+                </li>
+              </ul>
+            </div>
+          HTML
+
+          html.html_safe
+        end
+      end
+
       def error_messages!(object_name, options = {})
         resource = self.instance_variable_get("@#{object_name}")
         return '' if !resource || resource.errors.empty?

@@ -1,10 +1,17 @@
+- if flash[:success]
+  = flash_success_messages! flash[:success]
 - if flash[:danger]
   = flash_error_messages! flash[:danger]
 - @user.skills.order(approve_count: :desc).each do |skill|
   .message-area.clearfix.m-b-lg
     .col-xs-3.col-sm-2
-      = link_to approve_skill_user_path(skill_id: skill.id, image_url: current_user.image_url), data: { confirm: "#{@user.name}の#{skill.name}を讃える!" }, method: :post do
+      - unless skill.approved_user_id.include?(current_user.id.to_s)
+        = link_to approve_skill_user_path(skill_id: skill.id, image_url: current_user.image_url), data: { confirm: "#{@user.name}の#{skill.name}を認める!" }, method: :post do
+          .skill-count= skill.approve_count
+      - else
         .skill-count= skill.approve_count
+        = link_to disapprove_skill_user_path(skill_id: skill.id, image_url: current_user.image_url), data: { confirm: "#{@user.name}の#{skill.name}をやっぱり認めない!" }, method: :post do
+          %button.m-t.btn.btn-danger スキル-1
       %h3= skill.name
     .col-xs-9.col-sm-10
       .container-fluid
