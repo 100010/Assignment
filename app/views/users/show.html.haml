@@ -1,6 +1,6 @@
 - if flash[:danger]
   = flash_error_messages! flash[:danger]
-- @user.skills.each do |skill|
+- @user.skills.order(approve_count: :desc).each do |skill|
   .message-area.clearfix.m-b-lg
     .col-xs-3.col-sm-2
       = link_to approve_skill_user_path(skill_id: skill.id, image_url: current_user.image_url), data: { confirm: "#{@user.name}の#{skill.name}を讃える!" }, method: :post do
