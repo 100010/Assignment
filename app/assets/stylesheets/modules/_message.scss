@@ -1,0 +1,49 @@
+.message-form-area {
+  margin-bottom: 30px;
+}
+.message-form-submit-area {
+  background-color: lighten($silver-color, 2%);
+  border: 1px solid #e5e6e7;
+  border-top: none;
+  text-align: right;
+  padding: 12px;
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+.form-control--message {
+  border-bottom: 1px solid transparent;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.message-area {
+  border: 1px solid #e5e6e7;
+  background-color: white;
+  border-radius: 2px;
+  padding: 20px;
+  font-weight: 300;
+}
+.skill-count {
+  background-color: $primary-color;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: white;
+  font-size: 16px;
+  line-height: 28px;
+  text-align: center;
+}
+.message-sender-name {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+}
+.message-content {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+}
+.message-date {
+  color: $gray-color;
+  font-size: 12px;
+  margin-top: 8px;
+}

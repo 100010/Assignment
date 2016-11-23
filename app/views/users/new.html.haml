@@ -1,0 +1,30 @@
+.container.p-h-xl
+  .col-md-8.col-md-offset-2
+    %h1= t('views.defaults.sign_up')
+    .m-t-lg
+      = link_to "/auth/facebook", class: "btn btn-facebook btn-block" do
+        = fa_icon 'facebook', class: "fa-fw"
+        = t('views.defaults.sign_up_with_facebook')
+    .m-h-lg
+      .text-center= t('views.defaults.or')
+    = form_for @user, html: {role: 'form', class: "form-horizontal"} do |f|
+      = flash_error_messages! flash[:danger]
+      = f.error_messages!
+      .form-group{class: "#{f.error_css(:name)}"}
+        = f.label :name, class: "col-sm-3 control-label"
+        .col-sm-9= f.text_field :name, class: 'form-control'
+      .form-group{class: "#{f.error_css(:email)}"}
+        = f.label :email, class: "col-sm-3 control-label"
+        .col-sm-9= f.email_field :email, class: "form-control"
+      .form-group{class: "#{f.error_css(:password)}"}
+        = f.label :password, class: "col-sm-3 control-label"
+        .col-sm-9= f.password_field :password, class: 'form-control'
+      .form-group{class: "#{f.error_css(:password_confirmation)}"}
+        = f.label :password_confirmation, class: "col-sm-3 control-label"
+        .col-sm-9= f.password_field :password_confirmation, class: 'form-control'
+      .form-group
+        = f.label :image, class: "col-sm-3 control-label"
+        .col-sm-9= f.file_field :image, class: "form-control"
+      .form-group
+        .col-sm-9.col-sm-offset-3
+          .m-t= f.submit 'Done', class: "btn btn-primary"

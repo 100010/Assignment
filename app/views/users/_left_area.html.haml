@@ -1,0 +1,16 @@
+- @user = User.find params[:id]
+.host-left-area
+  .text-center.host-left-block
+    = image_tag @user.image_url, width: '80px', class: "img-circle"
+    %h1.host-name= @user.name
+    - if correct_user?(@user)
+      .m-t
+        = link_to "編集する", edit_user_path(current_user), class: "btn btn-default"
+        = link_to "スキルを追加する", add_skill_user_path(@user), class: "btn btn-primary"
+  - if correct_user?(@user)
+    .divider-w
+      .text-center.host-left-block
+        = link_to 'ログアウト', logout_path, method: :delete, class: "btn btn-danger"
+  - else
+    .text-center.host-left-block
+      = link_to 'マイページに戻る', current_user, class: "btn btn-default"

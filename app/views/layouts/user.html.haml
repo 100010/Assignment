@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %title Assignment
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    .host-main-area
+      .container
+        .row.row-grid
+          .col-sm-4
+            = render 'left_area'
+          .col-sm-8= yield

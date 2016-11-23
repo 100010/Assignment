@@ -1,0 +1,15 @@
+.host-main-block
+  %h2.host-main-topic 編集
+  = form_for current_user, html: {role: 'form', class: "form-horizontal"} do |f|
+    = f.error_messages!
+    .form-group
+      = f.label :image, class: "col-sm-3 control-label"
+      .col-sm-9= f.file_field :image, class: "col-sm-3 control-label"
+    .form-group
+      = f.label :name, class: "col-sm-3 control-label"
+      .col-sm-9= f.text_field :name, class: 'form-control'
+    .form-group
+      = f.label :email, class: "col-sm-3 control-label"
+      .col-sm-9= f.email_field :email, class: 'form-control'
+    .form-group
+      .col-sm-4.col-sm-offset-3= f.submit '完了', class: "btn btn-primary"

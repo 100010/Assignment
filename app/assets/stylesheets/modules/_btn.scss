@@ -1,0 +1,82 @@
+/* Button style */
+
+.btn {
+	border-radius: 2px;
+	letter-spacing: 1px;
+	font-size: 13px;
+	padding: 6px 24px;
+}
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn:active:focus,
+.btn:focus {
+	outline: 0;
+}
+
+/* Buttons size */
+
+.btn.btn-lg {
+	padding: 12px 45px;
+	font-size: 14px;
+}
+
+.btn.btn-sm {
+	padding: 6px 25px;
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+
+.btn.btn-xs {
+	padding: 4px 19px;
+	font-size: 11px;
+	letter-spacing: 0;
+}
+
+
+.btn.btn-w {
+	background: rgba(255, 255, 255, .8);
+	color: #111;
+}
+
+.btn.btn-w:hover,
+.btn.btn-w:focus {
+	background: rgba(255, 255, 255, 1);
+	color: #111;
+}
+
+.btn.btn-g {
+	background: #e5e5e5;
+	color: #111;
+}
+
+.btn.btn-g:hover,
+.btn.btn-g:focus {
+	background: #d8d8d8;
+	color: #111;
+}
+
+.btn.btn-border-w {
+	background: transparent;
+	border: 1px solid rgba(255, 255, 255, .75);
+	color: #fff;
+}
+
+.btn.btn-border-w:hover,
+.btn.btn-border-w:focus {
+	background: #fff;
+	color: #111;
+}
+
+.btn.btn-facebook {
+	background: #3b5998;
+	color: white;
+}
+
+.btn.btn-facebook:hover,
+.btn.btn-facebook:focus {
+	background: #0e1f56;
+	color: white;
+}

@@ -1,0 +1,9 @@
+.row.row-grid [class*="col-"] {
+  margin-bottom: 30px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.row.row-grid [class*="col-xs-"] {
+  margin-bottom: 15px;
+}

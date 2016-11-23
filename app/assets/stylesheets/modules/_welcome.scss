@@ -1,0 +1,65 @@
+.w-module {
+  padding: 70px 0;
+}
+
+.w-hero-cover {
+  position: relative;
+}
+.w-hero-title {
+  @include font-body;
+  font-size: 48px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -200px;
+  margin-top: -150px;
+  color: $gray-color;
+}
+
+.w-hero-title--ja {
+  margin-left: -196px;
+}
+.w-hero-title--zh {
+  margin-left: -148px;
+}
+@media (max-width: 767px) {
+  .w-hero-title {
+    font-size: 32px;
+    margin-left: -150px;
+  }
+  .w-hero-title--ja {
+    margin-left: -138px;
+  }
+  .w-hero-title--zh {
+    margin-left: -110px;
+  }
+}
+
+.w-topic {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-align: center;
+  color: $gray-color;
+  margin: 0 0 48px;
+}
+.w-topic--white {
+  color: white;
+  margin-bottom: 0;
+}
+
+.w-what-sub-title {
+  @include font-body;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: white;
+  margin: 28px 0 20px;
+}
+.w-what-sub-description {
+  font-size: 15px;
+  letter-spacing: 1px;
+  line-height: 24px;
+}

@@ -1,0 +1,11 @@
+.host-main-block
+  %h2.host-main-topic スキルの追加
+  = form_for current_user, html: {role: 'form', class: "form-horizontal"} do |f|
+    = f.error_messages!
+    .form-group
+      = f.label :skills, class: "col-sm-3 control-label"
+      .col-sm-9= f.text_field :skill_list, data: { load: current_user.skills.map{|t| {id: t.name, name: t.name, taggings_count: t.taggings_count}} }, id: 'js-tags-token-field'
+    .form-group
+      .col-sm-4.col-sm-offset-3= f.submit '完了', class: "btn btn-primary"
+:coffee
+  new TagTokenField('#js-tags-token-field')

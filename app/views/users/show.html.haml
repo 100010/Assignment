@@ -1,0 +1,29 @@
+- if flash[:danger]
+  = flash_error_messages! flash[:danger]
+- @user.skills.each do |skill|
+  .message-area.clearfix.m-b-lg
+    .col-xs-3.col-sm-2
+      = link_to approve_skill_user_path(skill_id: skill.id, image_url: current_user.image_url), data: { confirm: "#{@user.name}の#{skill.name}を讃える!" }, method: :post do
+        .skill-count= skill.approve_count
+      %h3= skill.name
+    .col-xs-9.col-sm-10
+      .container-fluid
+        %p スキルを認めてくれた人々
+        - image_url_and_user_id_hash =  Hash[*([skill.approved_user_id, skill.approved_user_image].transpose.flatten)]
+        - image_url_and_user_id_hash.each do |user_id, image_url|
+          .col-xs-2
+            = link_to user_path(id: user_id) do
+              = image_tag image_url, class: 'img-circle img-responsive'
+      .container-fluid
+        %p 同じスキルの持ち主たちだヨ
+        - User.tagged_with(skill.name).each_with_index do |skill_ability_person, i|
+          - unless current_user == skill_ability_person
+            - unless i == 4
+              = link_to skill_ability_person do
+                .col-xs-2
+                  = image_tag skill_ability_person.image_url, class: 'img-circle img-responsive'
+            - else
+              = link_to skill_ability_person do
+                .col-xs-2
+                  = image_tag skill_ability_person.image_url, class: 'img-circle img-responsive'
+                %p= link_to "全員見る", ""

@@ -1,0 +1,80 @@
+.host-main-area {
+  padding: 40px 0;
+}
+.host-left-area {
+  background-color: white;
+  border-radius: 4px;
+}
+.host-left-block {
+  padding: 24px 32px;
+}
+.host-left-topic {
+  margin: 0 0 12px;
+  color: $light-gray-color;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.host-left-sub-block {
+  margin-top: 6px;
+  font-size: 13px;
+}
+.host-left-sub-topic {
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+  display: inline-block;
+}
+.host-main-topic {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: $gray-color;
+  margin: 0 0 24px;
+}
+.host-image {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-right: 1px !important;
+}
+.host-service-images {
+  margin: 0 !important;
+  padding: 0 !important;
+  padding-left: 2px !important;
+}
+.host-service-image {
+  margin-bottom: 3.2px;
+}
+.host-info {
+  margin-top: 12px;
+}
+.host-name {
+  margin: 12px 0 0;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.host-area {
+  font-size: 11px;
+  color: $gray-color;
+  margin: 6px 0;
+}
+.host-introduction {
+  font-size: 12px;
+  line-height: 18px;
+}
+.host-square-name {
+  @extend .host-name;
+  margin-top: 0;
+}
+.host-squarea-area {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 0px;
+  > i {
+    margin-right: 2px;
+  }
+}
+.host-main-block {
+  margin-bottom: 30px;
+}
