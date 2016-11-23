@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root 'welcome#index'
-  resources :users do
+  resources :users, except: [:index] do
     collection do
       get :skills
       get :people
