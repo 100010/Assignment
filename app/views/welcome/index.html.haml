@@ -1,0 +1,29 @@
+!!!
+%html
+  %head
+    %title Wantedly clone
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    %link{:href => "statics/assets/css/main.css", :rel => "stylesheet"}/
+  %body.loading
+    #wrapper
+      #bg
+      #overlay
+      #main
+        %header#header
+          %h1 Wantedly clone
+          %p
+            Implemented by
+            = link_to "yohei senju", "https://yohei-senju.herokuapp.com/"
+          %nav
+            %ul
+              %li
+                = link_to new_user_path, class: "icon" do
+                  %div sign up
+              %li
+                = link_to login_path, class: "icon" do
+                  %div log in
+    :javascript
+      window.onload = function() { document.body.className = ''; }
+      window.ontouchmove = function() { return false; }
+      window.onorientationchange = function() { document.body.scrollTop = 0; }
