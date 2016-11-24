@@ -21,7 +21,7 @@ source 'https://rails-assets.org' do
 end
 
 # for fb login
-gem 'omniauth-facebook'
+# gem 'omniauth-facebook'
 
 # for image uploader
 gem 'carrierwave'

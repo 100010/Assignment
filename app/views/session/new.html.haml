@@ -1,10 +1,10 @@
 .container.p-h-xl
   .col-md-6.col-md-offset-3
     %h1= t('views.defaults.sign_in')
-    .m-t-lg
-      = link_to "/auth/facebook", class: "btn btn-facebook btn-block" do
-        = fa_icon 'facebook', class: "fa-fw"
-        = t('views.defaults.sign_in_with_facebook')
+    -# .m-t-lg
+    -#   = link_to "/auth/facebook", class: "btn btn-facebook btn-block" do
+    -#     = fa_icon 'facebook', class: "fa-fw"
+    -#     = t('views.defaults.sign_in_with_facebook')
     .m-h
       .text-center OR
     = form_for(:session, url: login_path) do |f|

@@ -1,10 +1,10 @@
 .container.p-h-xl
   .col-md-8.col-md-offset-2
     %h1= t('views.defaults.sign_up')
-    .m-t-lg
-      = link_to "/auth/facebook", class: "btn btn-facebook btn-block" do
-        = fa_icon 'facebook', class: "fa-fw"
-        = t('views.defaults.sign_up_with_facebook')
+    -# .m-t-lg
+    -#   = link_to "/auth/facebook", class: "btn btn-facebook btn-block" do
+    -#     = fa_icon 'facebook', class: "fa-fw"
+    -#     = t('views.defaults.sign_up_with_facebook')
     .m-h-lg
       .text-center= t('views.defaults.or')
     = form_for @user, html: {role: 'form', class: "form-horizontal"} do |f|
